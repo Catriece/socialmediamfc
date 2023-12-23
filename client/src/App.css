@@ -1,0 +1,12 @@
+#root {
+  max-width: 1280px;
+  text-align: center;
+  background-color: #e7e7e7;
+  height: 100dvh;
+  width: 100dvw;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
