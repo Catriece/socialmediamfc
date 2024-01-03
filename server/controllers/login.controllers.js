@@ -34,7 +34,9 @@ const loginAuthentication = async (credentials) => {
         // code gathers users default circle's posts and comments
         const [defaultPosts, defaultPostComments, defaultFamilyCircle] =
           await Promise.all([
-            query("SELECT * FROM posts WHERE family_code = ?", [code]),
+            query("SELECT * FROM posts WHERE family_code = ? ORDER BY DESC", [
+              code,
+            ]),
             query("SELECT * FROM post_comments WHERE family_code = ?", [code]),
             query(
               `SELECT CONCAT (first_name, " ", middle_name, " ", last_name) AS name, id, profile_picture FROM users WHERE family_code = ?`,
